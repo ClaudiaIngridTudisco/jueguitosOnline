@@ -1,0 +1,124 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f0f0f0;
+  text-align: center;
+  margin: 0;
+  padding: 20px;
+}
+
+h1 {
+  color: #333;
+  margin-bottom: 40px;
+}
+
+.back-button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  color: rgb(10, 8, 8);
+  text-decoration: none;
+}
+
+.back-button:hover {
+  background-color: #005fa3;
+}
+
+
+/*#board{
+    height: 540px;
+    width: 630px;
+    background-color: blue;
+    border: 10px solid navy;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.tile{
+    height: 70px;
+    width: 70px;
+    margin:5px;
+
+    background-color: white;
+    border-radius: 50%;
+    border: 5px solid navy;
+}*/
+
+#board {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr); /* 7 columnas iguales */
+  gap: 5px;
+  max-width: 90vw; /* se adapta al ancho de pantalla */
+  margin: auto;
+  padding: 10px;
+  aspect-ratio: 7 / 6; /* mantiene proporción del tablero */
+  background-color: blue;
+  border: 10px solid navy;
+}
+
+.tile {
+  width: 100%;
+  aspect-ratio: 1 / 1; /* cada ficha es cuadrada */
+  background-color: white;
+  border-radius: 50%;
+  border: 5px solid navy;
+  box-sizing: border-box;
+}
+
+
+.red-piece{
+    background-color: red;
+}
+
+.yellow-piece{
+    background-color: yellow;
+}
+
+
+
+.winner-title {
+  font-size: 2em;
+  margin-top: 20px;
+  color: white;
+  text-shadow: 0 0 10px gold;
+  opacity: 0;
+  transition: opacity 0.5s ease-in;
+}
+
+.winner-title.show {
+  opacity: 1;
+  animation: pulse 1s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); text-shadow: 0 0 10px gold; }
+  50% { transform: scale(1.2); text-shadow: 0 0 20px orange; }
+  100% { transform: scale(1); text-shadow: 0 0 10px gold; }
+}
+
+/*#reset-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 1.2em;
+  background-color: navy;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#reset-button:hover {
+  background-color: #004080;
+}*/
+
+@media (max-width: 600px) {
+  #board {
+    gap: 3px;
+    border-width: 5px;
+  }
+
+  .tile {
+    border-width: 3px;
+  }
+}
