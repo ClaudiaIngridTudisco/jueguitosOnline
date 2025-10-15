@@ -14,7 +14,7 @@ window.onload = function () {
     setGame();  // Inicializa el tablero
 
 
-    //// Crea el tablero visual y lógico (rellena las fichas del tablero)
+    //Crea el tablero visual y lógico (rellena las fichas del tablero)
     function setGame() {
         board = [];  // Inicializa la matriz del tablero
         currColumns = [5, 5, 5, 5, 5, 5, 5];  // Cada columna empieza con la fila 5 disponible (de abajo hacia arriba)
@@ -145,33 +145,3 @@ function setWinner(r, c) {
   });
 }
 
-/*function resetGame() {
-  // Limpia la matriz lógica
-  for (let r = 0; r < rows; r++) {
-    for (let c = 0; c < columns; c++) {
-      board[r][c] = ' ';
-      const tile = document.getElementById(`${r}-${c}`);
-      tile.classList.remove("red-piece", "yellow-piece", "winning-piece");
-    }
-  }
-
-  // Reinicia variables
-  currColumns = Array(columns).fill(rows);
-  playerTurn = playerRed;
-  gameOver = false;
-
-  // Limpia el mensaje de ganador
-  const winner = document.getElementById("winner");
-  winner.innerText = "";
-  winner.classList.remove("show");
-}
-
-// Esperar a que el DOM esté listo
-window.addEventListener("DOMContentLoaded", () => {
-  const resetButton = document.getElementById("reset-button");
-  if (resetButton) {
-    resetButton.addEventListener("click", resetGame);
-  } else {
-    console.error("No se encontró el botón de reinicio.");
-  }
-});*/

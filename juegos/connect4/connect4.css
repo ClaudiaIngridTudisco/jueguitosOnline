@@ -23,26 +23,12 @@ h1 {
   background-color: #005fa3;
 }
 
-
-/*#board{
-    height: 540px;
-    width: 630px;
-    background-color: blue;
-    border: 10px solid navy;
-    margin: auto;
-    display: flex;
-    flex-wrap: wrap;
+.board-container {
+  width: 100%; /* Ocupa el ancho completo del contenedor */
+  max-width: 90vw; /* Se adapta al ancho de la pantalla */
+  margin: auto; /* Centra el contenedor */
+  aspect-ratio: 7 / 6; /* Mantiene la proporción */
 }
-
-.tile{
-    height: 70px;
-    width: 70px;
-    margin:5px;
-
-    background-color: white;
-    border-radius: 50%;
-    border: 5px solid navy;
-}*/
 
 #board {
   display: grid;
@@ -54,6 +40,7 @@ h1 {
   aspect-ratio: 7 / 6; /* mantiene proporción del tablero */
   background-color: blue;
   border: 10px solid navy;
+  box-sizing: border-box; /* Incluye padding y border en el cálculo */
 }
 
 .tile {
@@ -61,7 +48,7 @@ h1 {
   aspect-ratio: 1 / 1; /* cada ficha es cuadrada */
   background-color: white;
   border-radius: 50%;
-  border: 5px solid navy;
+  border: 1px solid navy;
   box-sizing: border-box;
 }
 
@@ -96,29 +83,28 @@ h1 {
   100% { transform: scale(1); text-shadow: 0 0 10px gold; }
 }
 
-/*#reset-button {
-  margin-top: 20px;
-  padding: 10px 20px;
-  font-size: 1.2em;
-  background-color: navy;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
 
-#reset-button:hover {
-  background-color: #004080;
-}*/
-
-@media (max-width: 600px) {
+/* Para tablets (481px a 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
   #board {
-    gap: 3px;
-    border-width: 5px;
+    gap: 3px; 
+    padding: 5px; 
+    border: 5px solid navy; 
+  }
+  .tile {
+    border: 2px solid navy; 
   }
 
+}
+/* Para móviles (max-width: 480px) */
+@media (max-width: 480px) {
+  #board {
+    gap: 2px; /* Un poco más que 1px para mejor visibilidad */
+    padding: 2px; /* Reducido proporcionalmente */
+    border: 2px solid navy; /* Reducido para que sea más compacto */
+  }
   .tile {
-    border-width: 3px;
+    border: 1px solid navy; /* Mantiene el mismo valor, o ajusta si es necesario */
   }
 }
+
