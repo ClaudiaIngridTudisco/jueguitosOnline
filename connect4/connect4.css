@@ -1,0 +1,83 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f0f0f0;
+  text-align: center;
+  margin: 0;
+  padding: 20px;
+}
+
+h1 {
+  color: #333;
+  margin-bottom: 40px;
+}
+
+.back-button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  color: rgb(10, 8, 8);
+  text-decoration: none;
+}
+
+.back-button:hover {
+  background-color: #505152;
+}
+
+
+#board{
+    height: 540px;
+    width: 630px;
+    background-color: blue;
+    border: 10px solid navy;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.tile{
+    height: 70px;
+    width: 70px;
+    margin:5px;
+
+    background-color: white;
+    border-radius: 50%;
+    border: 5px solid navy;
+}
+
+
+
+
+
+.red-piece{
+    background-color: red;
+}
+
+.yellow-piece{
+    background-color: yellow;
+}
+
+
+
+
+/*@media (max-width: 600px) {
+  #board {
+    height: auto;
+    width: 90vw;
+    padding: 10px;
+    border-width: 6px;
+    gap: 4px;
+    justify-content: center;
+  }
+
+  .tile {
+    width: 40px;
+    height: 40px;
+    margin: 3px;
+    border-width: 3px;
+  }
+
+  #winner {
+    font-size: 1rem;
+    text-align: center;
+  }
+}*/
