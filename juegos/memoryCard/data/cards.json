@@ -1,0 +1,38 @@
+[
+    {
+        "image": "./imgmemory/barbagrisclara.png",
+        "name":"barbagrisclara"
+    },
+    {
+        "image": "./imgmemory/barbamarron.png",
+        "name":"barbamarron"
+    },
+    {
+        "image": "./imgmemory/gorra.png",
+        "name":"gorra"
+    },
+    {
+        "image": "./imgmemory/lentes.png",
+        "name":"lentes"
+    },
+    {
+        "image": "./imgmemory/pelocortogris.png",
+        "name":"pelocortogris"
+    },
+    {
+        "image": "./imgmemory/pelogrisoscuro.png",
+        "name":"pelogrisoscuro"
+    },
+    {
+        "image": "./imgmemory/pelorubiocorto.png",
+        "name":"pelorubiocorto"
+    },
+    {
+        "image": "./imgmemory/pelorubiolargo.png",
+        "name":"pelorubiolargo"
+    },
+    {
+        "image": "./imgmemory/turbante.png",
+        "name":"turbante"
+    }
+]

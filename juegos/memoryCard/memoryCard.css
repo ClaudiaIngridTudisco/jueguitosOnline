@@ -1,0 +1,199 @@
+body{
+    font-family: 'Segoe UI', sans-serif;
+    min-height: 100vh;
+    min-width: 100vw;
+    background-color: #12181f;
+    color: white;
+}
+
+h1{
+    text-align: center;
+    font-weight: 700;
+    font-size: 50px;
+}
+
+p{
+    text-align: center;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.actions {
+    display: flex;
+    justify-content: center;  /*Centra los botones horizontalmente*/
+}
+
+.actions button {
+    font-family: 'Segoe UI', sans-serif;
+    padding: 8px 16px;
+    font-size:30px;
+    border-radius: 10px;
+    background-color: #141514;
+    color: white;
+}
+
+.grid-container {
+    display: grid;
+    justify-content: center;  /*Centra el grid horizontalmente */
+    grid-gap: 16px; /*Espacio entre tarjetas */
+    grid-template-columns: repeat(6, 140px); /*6 columnas de 140px */
+    grid-template-rows: repeat(2, calc(140px / 2 * 3)); /*2 filas con proporción 3:2 */
+}
+
+.card {
+    height: calc(140px / 2 * 3);  /*Altura proporcional*/
+    width: 140px;
+    border-radius: 10px;
+    background-color: white;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: all 0.5s ease-in-out;
+}
+
+.front-image{
+    width: 60px;
+    height: 60px;
+}
+
+.flipped{
+    transform: rotateY(180deg);  /*Gira la tarjeta*/
+}
+
+.front, 
+.back{   /*Posiciona ambas caras de la tarjeta*/
+    backface-visibility: hidden;
+    position: absolute;
+    border-radius: 10px;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.card .front{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: rotateY(180deg);  /*Para que se vea al girar*/
+}
+
+.card .back{
+    background-image: url("data:image/svg+xml,<svg id='patternId' width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'><defs><pattern id='a' patternUnits='userSpaceOnUse' width='20' height='40' patternTransform='scale(2) rotate(0)'><rect x='0' y='0' width='100%' height='100%' fill='%23ffeb3bff'/><path d='M0 20v20h20V20zm10.135 4.9l1.342 3.579 3.845.312-2.996 2.506.897 3.8-3.268-2.056L6.736 35.1l.985-3.848-3.043-2.504 3.935-.18z'  stroke-width='1' stroke='none' fill='%23ffffffff'/><path d='M0 0v20h20V0zm10.135 4.9l1.342 3.579 3.845.312-2.996 2.506.897 3.8-3.268-2.056L6.736 15.1l.985-3.848-3.043-2.504 3.935-.18z'  stroke-width='1' stroke='none' fill='%2303a9f4ff'/></pattern></defs><rect width='800%' height='800%' transform='translate(0,0)' fill='url(%23a)'/></svg>"); /*Patrón SVG embebido*/
+    background-position: center center;
+    background-size: cover;
+    backface-visibility: hidden;
+}
+
+.back-button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  color: rgb(251, 241, 241);
+  text-decoration: none;
+}
+
+.back-button:hover {
+  background-color: #898f94;
+}
+
+
+/* Teléfonos hasta 480px) */
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 32px;
+  }
+
+  p {
+    font-size: 20px;
+  }
+
+  .grid-container {
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(6, calc(100px / 2 * 3));
+    grid-gap: 12px;
+  }
+
+  .card {
+    width: 100px;
+    height: calc(100px / 2 * 3);
+  }
+
+  .front-image {
+    width: 40px;
+    height: 40px;
+  }
+
+  .actions button {
+    font-size: 20px;
+    padding: 6px 12px;
+  }
+}
+
+/* Tablets (481px a 768px) */
+
+@media (min-width: 481px) and (max-width: 768px) {
+  h1 {
+    font-size: 40px;
+  }
+
+  p {
+    font-size: 24px;
+  }
+
+  .grid-container {
+    grid-template-columns: repeat(4, 120px);
+    grid-template-rows: repeat(5, calc(120px / 2 * 3));
+    grid-gap: 14px;
+  }
+
+  .card {
+    width: 120px;
+    height: calc(120px / 2 * 3);
+  }
+
+  .front-image {
+    width: 50px;
+    height: 50px;
+  }
+
+  .actions button {
+    font-size: 24px;
+    padding: 8px 14px;
+  }
+}
+
+/* Escritorio mediano (769px a 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .grid-container {
+    grid-template-columns: repeat(5, 130px);
+    grid-template-rows: repeat(4, calc(130px / 2 * 3));
+  }
+
+  .card {
+    width: 130px;
+    height: calc(130px / 2 * 3);
+  }
+
+  .front-image {
+    width: 55px;
+    height: 55px;
+  }
+}
+
+/* Escritorio grande (más de 1024px) */
+@media (min-width: 1025px) {
+  .grid-container {
+    grid-template-columns: repeat(6, 140px);
+    grid-template-rows: repeat(3, calc(140px / 2 * 3));
+  }
+
+  .card {
+    width: 140px;
+    height: calc(140px / 2 * 3);
+  }
+
+  .front-image {
+    width: 60px;
+    height: 60px;
+  }}
