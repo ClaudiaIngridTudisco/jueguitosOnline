@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tetris</title>
+    <link rel="stylesheet" href="./tetris.css">
+</head>
+
+<body>
+    <div class="game">
+        <div class="canvas-container">
+            <span>HOLD</span>
+            <div class="canvas">
+                <canvas id="canvas-hold"></canvas>
+            </div>
+        </div>
+        <div class="canvas-container">
+            <span class="score-container">SCORE: <span id="score">0</span></span>
+            <div class="canvas">
+                <canvas id="canvas-tetris"></canvas>
+            </div>
+        </div>
+        <div class="canvas-container">
+            <span>NEXT</span>
+            <div class="canvas">
+                <canvas id="canvas-next"></canvas>
+            </div>
+        </div>
+        <div class="menu" id="menu">
+            <span>TETRIS</span>
+            <button id="btn-start">START</button>
+        </div>
+    </div>
+    <script src="./tetris.js" type="module"></script> <!--el tipo module es para poder usar import y export>-->
+</body>
+
+</html>
