@@ -9,6 +9,7 @@ export class Game {
         this.piezasBag = new PiezasBag(canvas, cellSize);
         this.currentPieza = this.piezasBag.nextPieza();
         this.keyboard();
+        this.touchControls();
         document.getElementById("canvas-hold").addEventListener("touchstart", () => {
         if (!this.gameOver) {
         this.holdPieza();
@@ -223,8 +224,59 @@ export class Game {
         
 
     }
+touchControls() {
+  const leftBtn = document.getElementById('left');
+  const rightBtn = document.getElementById('right');
+  const rotateBtn = document.getElementById('rotate');
+  const downBtn = document.getElementById('down');
 
+  if (leftBtn && rightBtn && rotateBtn && downBtn) {
+    // Mover a la izquierda
+    leftBtn.addEventListener('click', () => {
+      this.movePiezaLeft();
+      navigator.vibrate?.(30);
+    });
 
+    // Mover a la derecha
+    rightBtn.addEventListener('click', () => {
+      this.movePiezaRight();
+      navigator.vibrate?.(30);
+    });
+
+    // Rotar
+    rotateBtn.addEventListener('click', () => {
+      this.rotationPiezaCW();
+      navigator.vibrate?.(30);
+    });
+
+    // Bajar 
+    downBtn.addEventListener('touchstart', () => {
+      this.keys.down = true;
+      navigator.vibrate?.(30);
+    });
+
+    downBtn.addEventListener('touchend', () => {
+      this.keys.down = false;
+    });
+
+    downBtn.addEventListener('touchcancel', () => {
+      this.keys.down = false;
+    });
+
+    // soporte para click para emuladores o navegadores
+    downBtn.addEventListener('mousedown', () => {
+      this.keys.down = true;
+    });
+
+    downBtn.addEventListener('mouseup', () => {
+      this.keys.down = false;
+    });
+
+    downBtn.addEventListener('mouseleave', () => {
+      this.keys.down = false;
+    });
+  }
+}
 
 }
 
