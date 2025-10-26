@@ -11,15 +11,23 @@
 <body>
     <div class="game">
         <div class="canvas-container">
-            <span>HOLD</span>
+            <span>NEXT</span>
             <div class="canvas">
-                <canvas id="canvas-hold"></canvas>
+                <canvas id="canvas-next"></canvas>
             </div>
-        </div>
+
         <div class="canvas-container">
             <span class="score-container">SCORE: <span id="score">0</span></span>
             <div class="canvas">
                 <canvas id="canvas-tetris"></canvas>
+            </div>
+        </div>
+        
+        </div>
+        <div id="hold" class="canvas-container">
+            <span>HOLD</span>
+            <div class="canvas">
+                <canvas id="canvas-hold"></canvas>
             </div>
         </div>
         <div class="touch-controls">
@@ -27,13 +35,7 @@
         <button id="rotate">⟳</button>
         <button id="right">→</button>
         <button id="soft-drop">↓</button>
-    
-        </div>
-        <div class="canvas-container">
-            <span>NEXT</span>
-            <div class="canvas">
-                <canvas id="canvas-next"></canvas>
-            </div>
+
         </div>
         <div class="menu" id="menu">
             <span>TETRIS</span>

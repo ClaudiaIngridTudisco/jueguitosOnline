@@ -106,11 +106,17 @@ body{
    #canvas-hold{
     width: 120px;
     height: 80px;
+    display: none;
+   }
+
+   #hold{
+    display: none;
    }
 
   #canvas-next{
     width: 120px;
     height: 180px;
+    
   }
 
   .canvas-container span,
@@ -143,13 +149,33 @@ body{
 
   .game {
     margin-top: 0;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
   }
 
   .menu {
     top: 30%;
     transform: translate(-50%, -30%);
   }
+
+
+  #canvas-tetris {
+    width: 260px;
+    height: 520px;
+    margin-bottom: 80px;
+  }
+
+  .touch-controls {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+  }
 }
+
+
 
 /* Celulares */
 @media (max-width: 480px) {
@@ -168,16 +194,21 @@ body{
   #canvas-tetris {
     width: 200px;
     height: 400px;
+    margin-bottom: 100px;
   }
 
   #canvas-hold{
     width: 70px;
     height: 30px;
+    display: none;
   }
   #canvas-next{
     width: 70px;
     height: 110px;
   }
+  #hold{
+    display: none;
+   }
 
   .canvas-container {
     width: 90%;
@@ -186,12 +217,12 @@ body{
 
   .canvas-container span,
   .menu span {
-    font-size: 18px;
+    font-size: 15px;
   }
 
   .score-container,
   #score {
-    font-size: 16px;
+    font-size: 18px;
   }
 
   .menu {
@@ -206,7 +237,7 @@ body{
 
   .touch-controls {
   position: fixed;
-  bottom: 30px;
+  bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
