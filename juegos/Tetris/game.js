@@ -231,57 +231,33 @@ touchControls() {
   const leftBtn = document.getElementById('left');
   const rightBtn = document.getElementById('right');
   const rotateBtn = document.getElementById('rotate');
-  //const downBtn = document.getElementById('down');
 
-  if (leftBtn && rightBtn && rotateBtn /*&& downBtn*/) {
+  if (leftBtn && rightBtn && rotateBtn) {
     // Mover a la izquierda
-    leftBtn.addEventListener('click', () => {
+    leftBtn.addEventListener('pointerdown', (e) => {
+      e.preventDefault(); // evita que se dispare click o scroll
       this.movePiezaLeft();
       navigator.vibrate?.(30);
     });
 
     // Mover a la derecha
-    rightBtn.addEventListener('click', () => {
+    rightBtn.addEventListener('pointerdown', (e) => {
+      e.preventDefault();
       this.movePiezaRight();
       navigator.vibrate?.(30);
     });
 
     // Rotar
-    rotateBtn.addEventListener('click', () => {
+    rotateBtn.addEventListener('pointerdown', (e) => {
+      e.preventDefault();
       this.rotationPiezaCW();
       navigator.vibrate?.(30);
     });
-
-    /* Bajar 
-    downBtn.addEventListener('touchstart', () => {
-      this.keys.down = true;
-      navigator.vibrate?.(30);
-    });
-
-    downBtn.addEventListener('touchend', () => {
-      this.keys.down = false;
-    });
-
-    downBtn.addEventListener('touchcancel', () => {
-      this.keys.down = false;
-    });
-
-    // soporte para click para emuladores o navegadores
-    downBtn.addEventListener('mousedown', () => {
-      this.keys.down = true;
-    });
-
-    downBtn.addEventListener('mouseup', () => {
-      this.keys.down = false;
-    });
-
-    downBtn.addEventListener('mouseleave', () => {
-      this.keys.down = false;
-    });
-  }*/
+  }
+}
 }
 
-}}
+
 
     
 
