@@ -159,11 +159,7 @@ export class Game {
             this.boardTetris.drawSquare(position.x, position.y, this.boardTetris.cellSize, "#000","white",20);
         }
     }
-    dropBlock(){
-        this.currentPieza.move(this.piezaDropDistance(),0);
-        this.placePieza();
-
-    }
+  
     holdPieza(){
         if(!this.canHold) return;
         if(this.hold.pieza === null){
@@ -210,12 +206,7 @@ export class Game {
                 this.holdPieza();
             }
         });
-        window.addEventListener("click", ()=>{
-            if(!this.gameOver){
-            this.dropBlock();
-            }
-            
-        })
+       
         window.addEventListener("keyup",(evt)=>{
             if(evt.key === "ArrowUp"){
                 this.keys.up = false;
@@ -231,6 +222,7 @@ touchControls() {
   const leftBtn = document.getElementById('left');
   const rightBtn = document.getElementById('right');
   const rotateBtn = document.getElementById('rotate');
+  const softDropBtn = document.getElementById('soft-drop');
 
   if (leftBtn && rightBtn && rotateBtn) {
     // Mover a la izquierda
@@ -253,6 +245,13 @@ touchControls() {
       this.rotationPiezaCW();
       navigator.vibrate?.(30);
     });
+    if (softDropBtn) {
+    softDropBtn.addEventListener('pointerdown', (e) => {
+    e.preventDefault();
+    this.movePiezaDown(); // baja una sola vez
+    navigator.vibrate?.(30);
+  });
+}
   }
 }
 }
