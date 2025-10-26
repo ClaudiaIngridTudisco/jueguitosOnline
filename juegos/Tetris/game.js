@@ -9,6 +9,8 @@ export class Game {
         this.piezasBag = new PiezasBag(canvas, cellSize);
         this.currentPieza = this.piezasBag.nextPieza();
         this.keyboard();
+        this.keys = { up: false, down: false }
+        this.lastDownTime = 0;
         this.touchControls();
         document.getElementById("canvas-hold").addEventListener("touchstart", () => {
         if (!this.gameOver) {
@@ -45,8 +47,9 @@ export class Game {
             this.next.draw2();
             this.hold.draw2();
       
-            if(this.keys.down){
+            if(this.keys.down && currentTime - this.lastDownTime > 100){
                 this.movePiezaDown();
+                this.lastDownTime = currentTime;
             }
             this.lastTime2 = currentTime;
         }
@@ -228,9 +231,9 @@ touchControls() {
   const leftBtn = document.getElementById('left');
   const rightBtn = document.getElementById('right');
   const rotateBtn = document.getElementById('rotate');
-  const downBtn = document.getElementById('down');
+  //const downBtn = document.getElementById('down');
 
-  if (leftBtn && rightBtn && rotateBtn && downBtn) {
+  if (leftBtn && rightBtn && rotateBtn /*&& downBtn*/) {
     // Mover a la izquierda
     leftBtn.addEventListener('click', () => {
       this.movePiezaLeft();
@@ -249,7 +252,7 @@ touchControls() {
       navigator.vibrate?.(30);
     });
 
-    // Bajar 
+    /* Bajar 
     downBtn.addEventListener('touchstart', () => {
       this.keys.down = true;
       navigator.vibrate?.(30);
@@ -275,10 +278,10 @@ touchControls() {
     downBtn.addEventListener('mouseleave', () => {
       this.keys.down = false;
     });
-  }
+  }*/
 }
 
-}
+}}
 
     
 
