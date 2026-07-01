@@ -1,15 +1,32 @@
 body{
     font-family: 'Segoe UI', sans-serif;
     min-height: 100vh;
-    min-width: 100vw;
+    margin: 0;
+    overflow-x: auto;
     background-color: #12181f;
     color: white;
+  
 }
 
 h1{
     text-align: center;
     font-weight: 700;
     font-size: 50px;
+}
+
+.back-button {
+  display: inline-block;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  margin-top: 20px;
+  padding: 10px 20px;
+  color: rgb(248, 244, 244);
+  text-decoration: none;
+}
+
+.back-button:hover {
+  background-color: #898f94;
 }
 
 p{
@@ -34,10 +51,9 @@ p{
 
 .grid-container {
     display: grid;
-    justify-content: center;  /*Centra el grid horizontalmente */
-    grid-gap: 16px; /*Espacio entre tarjetas */
-    grid-template-columns: repeat(6, 140px); /*6 columnas de 140px */
-    grid-template-rows: repeat(2, calc(140px / 2 * 3)); /*2 filas con proporción 3:2 */
+    justify-content: center;
+    gap: 16px;
+    grid-template-columns: repeat(6, minmax(80px, 140px));
 }
 
 .card {
@@ -84,17 +100,6 @@ p{
     backface-visibility: hidden;
 }
 
-.back-button {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 10px 20px;
-  color: rgb(251, 241, 241);
-  text-decoration: none;
-}
-
-.back-button:hover {
-  background-color: #898f94;
-}
 
 
 /* Teléfonos hasta 480px) */

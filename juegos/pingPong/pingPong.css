@@ -18,6 +18,21 @@ body{
     overflow: hidden;
 }
 
+.back-button {
+  display: inline-block;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  margin-top: 20px;
+  padding: 10px 20px;
+  color: rgb(23, 1, 1);
+  text-decoration: none;
+}
+
+.back-button:hover {
+  background-color: #898f94;
+}
+
 #user-score, 
 #comp-score{
 position: absolute;

@@ -17,6 +17,22 @@ body{
     align-items: center;
     justify-content: center;
 }
+
+.back-button {
+  display: inline-block;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  margin-top: 20px;
+  padding: 10px 20px;
+  color: rgb(248, 244, 244);
+  text-decoration: none;
+}
+
+.back-button:hover {
+  background-color: #898f94;
+}
+
 .game{
     position: relative;
     display: flex;
