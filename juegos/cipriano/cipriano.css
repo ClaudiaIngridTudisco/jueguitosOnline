@@ -8,6 +8,15 @@ body{
     background: #584040;
     display: flex;
     align-items: center;
+     /* Evita que se seleccione texto o imágenes al tocar rápido la pantalla */
+    user-select: none;
+    -webkit-user-select: none;
+    
+    /* Elimina el cuadro azul/gris traslúcido que muestra el celular al hacer tap */
+    -webkit-tap-highlight-color: transparent;
+    
+    /*Evita que el usuario recargue la página arrastrando el dedo hacia abajo */
+    overscroll-behavior-y: contain; 
 }
 
 .contenedor {

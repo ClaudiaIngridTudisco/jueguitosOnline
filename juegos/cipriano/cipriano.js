@@ -69,6 +69,7 @@ function Start() {
     textoScore = document.querySelector(".score");
     mago = document.querySelector(".mago");
     document.addEventListener("keydown", HandleKeyDown);
+    document.addEventListener("touchstart", HandleTouchStart, { passive: true });
 }
 
 function Update() {
@@ -94,6 +95,17 @@ function HandleKeyDown(ev) {
             return;
         }
 
+        Saltar();
+    }
+}
+
+function HandleTouchStart(ev) {
+    // Celular Si toca con un solo dedo, ejecuta la acción
+    if (ev.touches.length === 1) {
+        if (parado) {
+            location.reload();
+            return;
+        }
         Saltar();
     }
 }
