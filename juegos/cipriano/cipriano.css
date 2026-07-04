@@ -53,11 +53,11 @@ body{
 }
 
 .tarde {
-    background-color: #c23e3e;
+    background-color: #c44b4b;
 }
 
 .noche {
-    background-color: #3335b2;
+    background-color: #a3a4e5;
 }
 
 .mago {
@@ -133,7 +133,7 @@ body{
     right: 15px;
     z-index: 10;
 
-    color: #1b0ec9;
+    color: #60bcde;
     font-family: Verdana;
     font-size: 30px;
     font-weight: bold;
