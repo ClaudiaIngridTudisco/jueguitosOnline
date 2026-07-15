@@ -63,7 +63,6 @@ window.onload = function() {
     requestAnimationFrame(update);
     setInterval(placeEstalactitas, 1500); //cada 1.5 seconds
     document.addEventListener("keydown", moveCipriano);
-    //para pantallas táctiles
     document.addEventListener("touchstart", moveCipriano);
 }
 
@@ -168,8 +167,24 @@ function placeEstalactitas() {
     estalactitaArray.push(estalactita2);
 }
 
-function moveCipriano(e) {
+/*function moveCipriano(e) {
     if (e.code == "Space" || e.code == "ArrowUp" || e.code == "KeyX") {
+        //jump
+        velocityY = -6;
+
+        //reset game
+        if (gameOver) {
+            cipriano.y = ciprianoY;
+            estalactitaArray = [];
+            score = 0;
+            gameOver = false;
+        }
+    }
+}*/
+
+function moveCipriano(e) {
+    if (e.code == "Space" || e.code == "ArrowUp" || e.code == "KeyX" || e.type == "touchstart") {
+        
         //jump
         velocityY = -6;
 
