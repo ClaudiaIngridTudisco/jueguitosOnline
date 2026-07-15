@@ -63,6 +63,8 @@ window.onload = function() {
     requestAnimationFrame(update);
     setInterval(placeEstalactitas, 1500); //cada 1.5 seconds
     document.addEventListener("keydown", moveCipriano);
+    //para pantallas táctiles
+    document.addEventListener("touchstart", moveCipriano);
 }
 
 function update() {

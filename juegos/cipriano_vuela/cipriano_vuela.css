@@ -1,11 +1,23 @@
+
 body {
-    font-family:'Courier New', Courier, monospace;
-    text-align: center;
-}
+        font-family:'Courier New', Courier, monospace;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #333; /* Un fondo oscuro para los bordes que sobren */
+        overflow: hidden; /* Evita que el usuario pueda hacer scroll hacia abajo */
+    }
 
 #board {
     /* background-color: skyblue; */
     background-image: url("./fondo.png");
+     max-width: 100%;
+        max-height: 100vh;
+        object-fit: contain; /* Escala el canvas manteniendo la proporción original */
 }
 
 
