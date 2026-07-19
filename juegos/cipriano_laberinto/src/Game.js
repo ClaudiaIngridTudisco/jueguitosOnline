@@ -7,8 +7,8 @@ const tileSize = 32;
 const velocity = 2;
 
 // 2. CONFIGURACIÓN DE AUDIO / SONIDOS
-const gameWinSound = new Audio("ganador.mp3");     // Sonido final del juego
-const levelWinSound = new Audio("sounds/ganador.mp3");   // Sonido al pasar de nivel (opcional)
+const gameWinSound = new Audio("sounds/ganador.mp3");     // Sonido final del juego
+const levelWinSound = new Audio("sounds/ganador.mp3");   // Sonido al pasar de nivel
 const gameOverSound = new Audio("sounds/fin.wav");   // Sonido al perder el juego
 
 // 3. ESTADO GLOBAL DEL JUEGO
@@ -50,7 +50,7 @@ function gameLoop() {
 
     // Texto de nivel completado
     ctx.font = "bold 28px Arial";
-    ctx.fillStyle = "#27aed6"; // Dorado brillante
+    ctx.fillStyle = "#27aed6";
     ctx.textAlign = "center";
     ctx.fillText("¡NIVEL COMPLETADO!", canvas.width / 2, canvas.height / 2 - 15);
     
@@ -123,7 +123,7 @@ function checkGameOver() {
   }
 }
 
-// 7. DETECCIÓN DE PAUSA EXTERNA (Mantiene la lógica original)
+// 7. DETECCIÓN DE PAUSA EXTERNA
 function pause() {
   // Retorna true si hay alguna condición del teclado o UI externa que pause el juego voluntariamente
   // Si no hay pausa manual,  puede retornar false
@@ -147,7 +147,7 @@ function drawGameEnd() {
     }
 
     if (gameWin) {
-      ctx.fillStyle = "#33FF33";
+      ctx.fillStyle = "#33f1ff";
       ctx.fillText("¡GANASTE EL JUEGO!", canvas.width / 2, canvas.height / 2);
     }
 

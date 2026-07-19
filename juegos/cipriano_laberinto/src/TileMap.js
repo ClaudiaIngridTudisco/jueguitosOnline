@@ -7,7 +7,7 @@ export default class TileMap {
   constructor(tileSize) {
     this.tileSize = tileSize;
     this.currentLevel = 0; // nivel 0 (el primero)
-    this.map = JSON.parse(JSON.stringify(mapas[this.currentLevel])); // Clonamos el mapa
+    this.map = JSON.parse(JSON.stringify(mapas[this.currentLevel])); // Clonar el mapa
 
     // Imagen del Diamante
     this.diamante = new Image();
