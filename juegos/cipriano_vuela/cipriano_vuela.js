@@ -99,27 +99,6 @@ function update() {
         }
     }
 
- /*   // Caja de Cipriano
-context.strokeStyle = "lime";
-context.lineWidth = 2;
-context.strokeRect(
-    cipriano.x,
-    cipriano.y,
-    cipriano.width,
-    cipriano.height
-);
-
-// Cajas de las estalactitas
-for (let estalactita of estalactitaArray) {
-    context.strokeStyle = "red";
-    context.strokeRect(
-        estalactita.x,
-        estalactita.y,
-        estalactita.width,
-        estalactita.height
-    );
-}*/
-
     //limpiar estalactitas
     while (estalactitaArray.length > 0 && estalactitaArray[0].x < -estalactitaWidth) {
         estalactitaArray.shift(); //removes first element from the array
@@ -167,25 +146,11 @@ function placeEstalactitas() {
     estalactitaArray.push(estalactita2);
 }
 
-/*function moveCipriano(e) {
-    if (e.code == "Space" || e.code == "ArrowUp" || e.code == "KeyX") {
-        //jump
-        velocityY = -6;
-
-        //reset game
-        if (gameOver) {
-            cipriano.y = ciprianoY;
-            estalactitaArray = [];
-            score = 0;
-            gameOver = false;
-        }
-    }
-}*/
 
 function moveCipriano(e) {
     if (e.code == "Space" || e.code == "ArrowUp" || e.code == "KeyX" || e.type == "touchstart") {
         
-        //jump
+        //salto
         velocityY = -6;
 
         //reset game

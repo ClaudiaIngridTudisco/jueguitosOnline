@@ -1,0 +1,69 @@
+
+/* 1. RESET GENERAL: Asegura que el fondo ocupe TODA la pantalla */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #111116; /* Un fondo oscuro texturado */
+}
+
+/* 2. CENTRADO: Ubica el juego en el medio del monitor o celular */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-family: 'Arial', sans-serif;
+  overflow: hidden; /* Evita barras de scroll en móviles */
+}
+
+/* 3. CONTENEDOR PRINCIPAL */
+.game-container{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+/* 4. TÍTULO DEL JUEGO */
+h1 {
+  margin: 0 0 15px 0;
+  font-size: 24px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-align: center;
+  color: #00f7ff; /* Dorado */
+  text-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* 5. EL CANVAS: Configuración de visibilidad */
+canvas {
+  display: block !important; /* Fuerza al navegador a mostrarlo */
+  background-color: #000000; /* Fondo negro por si tardan en cargar las baldosas */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+  border: 4px solid #333;
+  border-radius: 4px;
+  
+  /* Evita que los gestos del celular (scroll/zoom) rompan los movimientos del dedo */
+  touch-action: none; 
+  
+  /* Si la pantalla es más chica que el mapa, se adapta sin colapsar a 0 */
+  max-width: 95vw;
+  max-height: 80vh;
+  object-fit: contain;
+}
+
+.back-button {
+  display: inline-block;
+  position: fixed;
+    top: 20px;
+    left: 20px;
+  margin-top: 20px;
+  padding: 10px 20px;
+  color: #00f7ff;
+  text-decoration: none;
+}
+
+.back-button:hover {
+  background-color: #e1a339;
+}
